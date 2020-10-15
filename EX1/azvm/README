@@ -1,6 +1,6 @@
 Hi, i have used terraform to create azure vm
 
- Install terraform binaries
+ Install terraform binary
 
  install az-cli
 
