@@ -1,0 +1,30 @@
+Linux problem solving
+
+Issue with Redis on this machine. It's not starting. Please diagnose and solve the issue.
+
+Solution:
+
+Steps
+
+1) sudo systemctl status redis -> redis is in failed state
+
+2) Then tried to restart redis -> sudo systemctl restart redis.service
+
+3) Then checked system logs -> journalctl -xe - > got this error 'logfile /var/log/redis-server.log'
+
+4) Then viewed redis.conf file ->  sudo vim /etc/redis/redis.conf
+
+5) Checked the path /var/log/redis-server.log and find out which is not the right path.
+
+6) Then edited the redis.conf file with correct path i.e /var/log/redis/redis-server.log
+
+7) sudo systemctl restart redis.service - > successfully restarted
+
+8) After restarting redis checked redis status -> sudo systemctl status redis
+
+9) Successfully running and redis is in active state
+
+
+
+
+

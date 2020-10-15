@@ -1,0 +1,26 @@
+Windows problem solving
+
+Issue with the web application installed. When browsing to http://localhost/ we get a
+503 exception. Please diagnose and solve the issue.
+
+Solution:
+
+1) Tried browsing http://localhost/ - > we get a 503 exception
+
+2) Went to IIS - started restarting -> Default web site - Then checked Application pool then selected DefaultAppPool which is in a stopped state.
+
+3) Then restarted the DefaultAppPoo - > Refreshed the Default web site, still same error exit, again checked Application pool, again DefaultAppPool went to stopped state.
+
+4) Then in the Action Section -> Select Advance setting in Rapid-Fail Protection change Enable is False -> then started DefaultAppPool and restarted my Default web site, still same error exit, but DefaultAppPool is still in running state.
+
+5) Then check Event Viewer -> System Log -> Its thrown Error log - Event 5059,WAS, warning EVENT 5057,WAS
+
+6) Then in Internet Information Services (IIS) Manager then select the Application Pools folder underneath the computer name.
+
+7) In Features View, select the application pool. In the Actions pane, select Advanced Settings.
+Under Process Model, verify the Identity type. Then the value is in ApplicationPoolIdentiy then i change it into default NetworkService.
+
+8) Then stop and restarted the Default web site then browse into http://localhost/ and its loading successfully.
+
+
+   

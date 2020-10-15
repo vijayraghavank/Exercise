@@ -1,0 +1,12 @@
+
+Hi, Team
+
+1) First Install docker in ubuntu machine using the script file - installdocker.sh 
+
+2) To Deploy Elastic search in docker container run DockerES.sh
+
+3) To check health status please run healthcheckcmd.sh
+
+#if permission issue please change the file permission  into chmod +x filename.sh
+
+

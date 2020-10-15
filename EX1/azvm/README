@@ -1,0 +1,36 @@
+Hi, i have used terraform to create azure vm
+
+ Install terraform binaries
+
+ install az-cli
+
+Logging into  azure using
+$ az login
+
+Use az account set with the subscription ID
+$az account set --subscription subscriptionid
+
+
+Go into folder azvm
+
+$ terraform init
+$ terraform plan
+$ terraform apply 
+
+
+
+Once all the resources are created.
+
+To Get Public IP address
+
+$az network public-ip list -g vijay | grep ipAddress
+
+Then ssh into the Vm
+
+$ssh vijay@publicip
+
+ping with private IPs to check the connection between two VMs.
+
+
+
+
